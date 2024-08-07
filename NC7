@@ -1,0 +1,13 @@
+local player = game.Players.LocalPlayer
+
+local function onCharacterAdded(character)
+    local humanoid = character:WaitForChild("Humanoid")
+    humanoid.JumpPower = 150 -- قوة القفز المعززة
+end
+
+player.CharacterAdded:Connect(onCharacterAdded)
+
+-- تأكد من وجود شخصية للاعب بالفعل عند تشغيل السكربت
+if player.Character then
+    onCharacterAdded(player.Character)
+end
